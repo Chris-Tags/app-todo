@@ -1,0 +1,32 @@
+@use "./styles/index.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: $space-l $space-m;
+  line-height: 1.5;
+}
+
+#root {
+  width: 100%;
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: none;
+}
+
+ul {
+  list-style: none;
+}

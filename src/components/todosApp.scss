@@ -1,0 +1,116 @@
+@use "../styles/index.scss" as *;
+
+.todoContainer {
+  width: 100%;
+  margin: $space-m 0;
+
+  form {
+    width: $content-width;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: $space-s;
+
+    input {
+      flex: 3;
+      min-width: 0;
+      padding: $space-m;
+      border: 1px solid $border-color;
+      outline: none;
+      font-size: 1rem;
+
+      &:focus {
+        border-color: $green;
+      }
+    }
+
+    button {
+      flex: 1;
+      background-color: $green;
+      color: $light;
+      font-size: 16px;
+      padding: $space-m;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $green-hover;
+      }
+    }
+  }
+}
+
+.listTodo {
+  width: $content-width;
+  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $space-m;
+}
+
+.cardTodo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-m;
+  padding: $space-m;
+  border: 1px solid $border-color;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+
+  p {
+    overflow-wrap: anywhere;
+  }
+}
+
+.settings {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: $space-l;
+
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-round;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+}
+
+.settings button:first-child {
+  background-color: $yellow;
+  color: $dark;
+
+  &:hover {
+    background-color: $yellow-hover;
+  }
+}
+
+.settings button:last-child {
+  background-color: $red;
+  color: $light;
+
+  &:hover {
+    background-color: $red-hover;
+  }
+}
+
+@media (max-width: 480px) {
+  .todoContainer form {
+    flex-direction: column;
+  }
+
+  .todoContainer form input,
+  .todoContainer form button {
+    width: 100%;
+    flex: none;
+  }
+
+  .settings {
+    flex-direction: column;
+    gap: $space-s;
+  }
+}
